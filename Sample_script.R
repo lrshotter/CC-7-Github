@@ -13,10 +13,17 @@
 # git config --global user.name "Your Name"
 
 # Libraries ----
+
 library(ggplot2)
 library(tidyr)
 library(dplyr)
 library(readr)
+
+(temp.el <- ggplot (temp_elevation, aes(x = Elevation.m, y = Soil.temp.mean)) +
+    geom_point(colour = "#8B4513") +
+    geom_smooth(method = lm, colour = "#8B4513", fill = "#8B4513", alpha = 0.6) +
+    labs(x = "Elevation (m)", y = "Mean soil temperature (°C)") +
+    theme.clean())
 
 # Functions ----
 # This is a ggplot function for a nice clean theme
